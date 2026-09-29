@@ -1,45 +1,171 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste GitHub</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Padaria Pão da Vila</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --azul: #1F3FA8;
+      --amarelo: #F7D25C;
+      --branco: #FFFFFF;
+      --texto: #16203A;
+      --claro: #E8ECF5;
+    }
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding-top: 100px;
-            background: #f4f4f4;
-        }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        h1 {
-            color: #333;
-        }
+    body {
+      font-family: "Bricolage Grotesque", system-ui, sans-serif;
+      color: var(--texto);
+      background: var(--branco);
+      line-height: 1.6;
+    }
 
-        button {
-            padding: 10px 20px;
-            background: #333;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    a { color: inherit; }
 
-        button:hover {
-            background: #555;
-        }
-    </style>
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--amarelo);
+      outline-offset: 3px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 5vw;
+      background: var(--azul);
+      color: var(--branco);
+    }
+
+    header strong { font-size: 1.25rem; font-weight: 800; }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover { color: var(--amarelo); }
+
+    .hero {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 4rem 5vw 6rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 11vw, 8rem);
+      font-weight: 800;
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+      max-width: 10ch;
+    }
+
+    .hero p {
+      margin-top: 1.5rem;
+      font-size: 1.25rem;
+      max-width: 40ch;
+    }
+
+    .botao {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.9rem 1.8rem;
+      background: var(--amarelo);
+      color: var(--texto);
+      font-weight: 800;
+      text-decoration: none;
+      border-radius: 999px;
+    }
+
+    .botao:hover { background: var(--branco); }
+
+    section.conteudo { padding: 4rem 5vw; }
+
+    h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 2rem;
+    }
+
+    .cardapio {
+      list-style: none;
+      max-width: 42rem;
+    }
+
+    .cardapio li {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 2px solid var(--claro);
+      font-size: 1.15rem;
+    }
+
+    .cardapio span { font-weight: 800; color: var(--azul); }
+
+    .info {
+      background: var(--amarelo);
+    }
+
+    .info p { font-size: 1.15rem; max-width: 45ch; }
+    .info p + p { margin-top: 0.5rem; }
+
+    footer {
+      padding: 2rem 5vw;
+      background: var(--texto);
+      color: var(--claro);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 600px) {
+      header { flex-direction: column; gap: 0.75rem; }
+      nav a { margin: 0 0.75rem; }
+    }
+  </style>
 </head>
-
 <body>
 
-    <h1>Olá, GitHub! 🚀</h1>
-    <p>Meu primeiro arquivo no GitHub.</p>
+  <header>
+    <strong>Pão da Vila</strong>
+    <nav>
+      <a href="#cardapio">Cardápio</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
 
-    <button onclick="alert('Funcionou! 🎉')">
-        Clique aqui
-    </button>
+  <section class="hero">
+    <h1>Pão quente toda hora.</h1>
+    <p>Fornada nova a cada duas horas, das 6h às 20h. Passa aqui e leva o seu ainda estalando.</p>
+    <a class="botao" href="#cardapio">Ver cardápio</a>
+  </section>
+
+  <section class="conteudo" id="cardapio">
+    <h2>Cardápio</h2>
+    <ul class="cardapio">
+      <li>Pão francês (unidade) <span>R$ 0,90</span></li>
+      <li>Pão na chapa com manteiga <span>R$ 6,00</span></li>
+      <li>Pão de queijo (100 g) <span>R$ 7,50</span></li>
+      <li>Café coado <span>R$ 4,00</span></li>
+      <li>Misto quente <span>R$ 12,00</span></li>
+      <li>Sonho de creme <span>R$ 8,00</span></li>
+    </ul>
+  </section>
+
+  <section class="conteudo info" id="contato">
+    <h2>Onde estamos</h2>
+    <p>Rua das Flores, 120 — São Paulo, SP</p>
+    <p>Segunda a sábado, 6h às 20h. Domingo, 7h às 13h.</p>
+    <p>WhatsApp: (11) 90000-0000</p>
+  </section>
+
+  <footer>
+    © 2026 Padaria Pão da Vila
+  </footer>
 
 </body>
 </html>
